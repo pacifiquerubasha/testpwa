@@ -32,26 +32,32 @@ function App() {
   if (!supportsPWA) {
     return null;
   }
-  return (
-    <button
-      className="link-button"
-      id="setup_button"
-      aria-label="Install app"
-      title="Install app"
-      onClick={onClick}
-    >
-      Install
-    </button>
-  );
-
-
   // return (
-  //   <div className="App">
-  //       <button type="button" onClick={install}>
-  //         Install Appx
-  //       </button>
-  //   </div>
+  //   <button
+  //     className="link-button"
+  //     id="setup_button"
+  //     aria-label="Install app"
+  //     title="Install app"
+  //     onClick={onClick}
+  //   >
+  //     Install
+  //   </button>
   // );
+
+
+  return (
+    <div className="App">
+         <button
+            className="link-button"
+            id="setup_button"
+            aria-label="Install app"
+            title="Install app"
+            onClick={onClick}
+          >
+            Install
+          </button>
+    </div>
+  );
 }
 
 export default App;
