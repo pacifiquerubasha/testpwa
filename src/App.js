@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { usePWAInstall } from 'react-use-pwa-install'
+import user from "./assets/images/user.jpg"
+import qr from "./assets/images/qr.svg"
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
 
@@ -24,15 +27,75 @@ function App() {
 
   return (
     <div className="App">
-      <h1>
-        Lorem5x
-      </h1>
-      <p>
-        But don't worry, we have a fix for that! We can add a custom popup which will indicate that our app can be added to home screen. You are free to design that popup as you wish, our example is shown below. The hard part is to display it only in Safari and not in standalone mode (when the app is already added to home screen). You can check if your app is in standalone mode
-      </p>
+       <div class="container">
+          <div class="banner">           
+            <div class="hero">
+              <img src={user} alt="" class="user"/>
+              <div class="hero-info">
+                <span>Moutdin Muckdoombukus</span>
+                <span class="title">Senior Web Developer</span>
+              </div>
+              <div class="socials">
+                <a href="https://wa.me/6012828">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+            <div class="qrcode">
+              <div class="field field--name-field-qr-with-logo field--type-image field--label-visually_hidden">
+                <div class="field__label visually-hidden">QR Code</div>
+                <div class="field__item">
+                  <img loading="lazy" src={qr}/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="more-info">
+            <div class="info-container">
+              <h1 class="info-title">CONTACT DETAILS</h1>
+              <div>
+                <div>LASTNAME</div>
+                <div class="field-value">Muckdoombukus</div>
+              </div>
+              <div>
+                <div>FIRSTNAME</div>
+                <div class="field-value">Moutdin</div>
+              </div>
+              <div>
+                <div>EMAIL</div>
+                <a href="mailto:moutdinm@frci.net" class="field-value">moutdinm@frci.net</a>
+              </div>
+              <div>
+                <div>PHONE</div>
+                <a href="tel:6012828" class="field-value">6012828</a>
+              </div>
+              <div>
+                <div>COMPANY</div>
+                <a href="#" class="field-value">FRCI</a>
+              </div>
+              <div>
+                <div>JOB TITLE</div>
+                <div class="field-value">Senior Web Developer</div>
+              </div>
+              <div>
+                <div>DEPARTMENT</div>
+                <a href="#" class="field-value">eServices</a>
+              </div>
+              <div>
+                <div>ADDRESS</div>
+                <div class="field-value">First Floor, The Hub, Industrial Zone, Phoenix, Mauritius</div>
+              </div>
+              <div>
+                <a href="tel:6012828" itemprop="telephone" content="6012828">Add Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       {supportsPWA && 
-        <button type="button" onClick={install}>
-          Install THE APP
+        <button type="button" className='btn__install' onClick={install}>
+          Install App
         </button>
       }
     </div>
